@@ -668,13 +668,13 @@ if($_SESSION['enroll'] == 'customer')
         </div>
     </div>
 
-    <footer class="row">
-        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Mae,bintang, christian
+ <footer class="row">
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Mae, Bintang, Yudhi
                 </a> 2015</p>
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
                 href="http://usman.it/free-responsive-admin-template">NFC</a></p>
-    </footer>
+</footer>
 
 </div><!--/.fluid-container--> 
 
