@@ -220,65 +220,58 @@ if($_SESSION['enroll'] == 'admin')
                 </div>
             </div>
             <div class="box-content row">
-                <div class="col-lg-7 col-md-12">
-                    
-                       <table width="1000" border="1" cellpadding="2" cellspacing="2">
-
-
-<tr bgcolor="#FFFFFF" style="text-align: center;">
-<td width="70">Nama Penjual</td>
-<td width="70">Id Penjual</td>
-<td width="70">Id Pembeli</td>
-<td width="70">Kode Barang</td>
-<td width="70">Harga Satuan</td>
-<td width="70">Jumlah Unit</td>
-<td width="70">Total Harga</td>
-<td width="70">Waktu Transaksi</td>
-<td width="70">Status</td>
-
-
-
-</tr>
-<?php 
-//Koneksi ke server Mysql
-mysql_connect("localhost","root");
-mysql_select_db("nfc_pay");
-$query = mysql_query("SELECT *FROM penjualan");
-while ($tampilkan= mysql_fetch_array($query)){
-		$Nama_Penjual = $tampilkan['nama_penjual'];
-		$Id_Penjual = $tampilkan['id_penjual'];
-		$Id_Pembeli = $tampilkan['id_pembeli'];
-		$Kode_Barang = $tampilkan['kode_barang'];
-		$Harga_Satuan = $tampilkan['harga_satuan'];
-		$Jumlah_Unit = $tampilkan['jumlah_unit'];
-		$Total_Harga = $tampilkan['total_harga'];
-		$Waktu_Transaksi = $tampilkan['waktu_transaksi'];
-		$Status = $tampilkan['status'];
-?>	
-<tr bgcolor="#FFFFFF" style="text-align: center;">
-<td width="50"><?php echo $Nama_Penjual; ?></td>
-<td width="50"><?php echo $Id_Penjual; ?></td>
-<td width="50"><?php echo $Id_Pembeli; ?></td>
-<td width="50"><?php echo $Kode_Barang; ?></td>
-<td width="80"><?php echo $Harga_Satuan; ?></td>
-<td width="30"><?php echo $Jumlah_Unit; ?></td>
-<td width="30"><?php echo $Total_Harga; ?></td>
-<td width="30"><?php echo $Waktu_Transaksi; ?></td>
-<td width="30"><?php echo $Status; ?></td>
-</tr>
-<?php
-}
-?>
-</table>
-<font size="4" face="comic sans ms">
-<a href="homepage.php">home</a></br>
-
-
-  
-                
-        </div>
-    </div>
-</div>
+                <div class="col-md-11">
+                       <table class="table table-hover" id="tableBeli">
+                       		<thead>
+								<th>Nama Penjual</th>
+								<th>id Penjual</th>
+								<th>id Pembeli</th>
+								<th>Kode Barang</th>
+								<th>Harga Satuan</th>
+								<th>Jumlah Unit</th>
+								<th>Total Harga</th>
+								<th>Waktu Transaksi</th>
+								<th>Status</th>
+							</thead>
+							<tbody>
+								<?php 
+								//Koneksi ke server Mysql
+								mysql_connect("localhost","root");
+								mysql_select_db("nfc_pay");
+								$query2= mysql_query("update penjualan set total_harga = jumlah_unit*harga_satuan");
+								$query = mysql_query("SELECT * FROM penjualan");
+								//if (!empty(mysql_fetch_array($query))) {
+										while ($tampilkan= mysql_fetch_array($query,$query2)){
+										$Nama_Penjual = $tampilkan['nama_penjual'];
+										$Id_Pembeli = $tampilkan['id_pembeli'];
+										$Id_Penjual = $tampilkan['id_penjual'];
+										$Kode_Barang = $tampilkan['kode_barang'];
+										$Harga_Satuan = $tampilkan['harga_satuan'];
+										$Jumlah_Unit = $tampilkan['jumlah_unit'];
+										$Total_Harga = $tampilkan['total_harga'];
+										$Waktu_Transaksi = $tampilkan['waktu_transaksi'];
+										$Status = $tampilkan['status'];
+								?>	
+								<tr>
+									<td><?php echo $Nama_Penjual; ?></td>
+									<td><?php echo $Id_Pembeli; ?></td>
+									<td><?php echo $Id_Penjual; ?></td>
+									<td><?php echo $Kode_Barang; ?></td>
+									<td><?php echo $Harga_Satuan; ?></td>
+									<td><?php echo $Jumlah_Unit; ?></td>
+									<td><?php echo $Total_Harga; ?></td>
+									<td><?php echo $Waktu_Transaksi; ?></td>
+									<td><?php echo $Status; ?></td>
+								</tr>
+								<?php
+									} 
+								//}
+								?>
+							</tbody>
+						</table>
+        		</div>
+    		</div>
+		</div>
 
 <!--<div class="row">
     <div class="box col-md-4">

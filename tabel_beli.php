@@ -193,9 +193,10 @@ if($_SESSION['enroll'] == 'customer')
 								mysql_connect("localhost","root");
 								mysql_select_db("nfc_pay");
 								$id = $_SESSION['id'];
+								$query2= mysql_query("update pembelian set total_harga = jumlah_unit*harga_satuan");
 								$query = mysql_query("SELECT * FROM pembelian where id_pembeli='$id'");
-								if (!empty(mysql_fetch_array($query))) {
-								while ($tampilkan= mysql_fetch_array($query)){
+								//if (!empty(mysql_fetch_array($query))) {
+										while ($tampilkan= mysql_fetch_array($query,$query2)){
 										$Nama_Pembeli = $tampilkan['nama_pembeli'];
 										$Id_Pembeli = $tampilkan['id_pembeli'];
 										$Id_Penjual = $tampilkan['id_penjual'];
@@ -218,8 +219,8 @@ if($_SESSION['enroll'] == 'customer')
 									<td><?php echo $Status; ?></td>
 								</tr>
 								<?php
-									}
-								}
+									} 
+								//}
 								?>
 							</tbody>
 						</table>
