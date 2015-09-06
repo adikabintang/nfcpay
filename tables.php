@@ -47,6 +47,7 @@ if($_SESSION['enroll'] == 'admin')
 
     <!-- The styles -->
     <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+	<link href='css/jquery.dataTables.min.css' rel='stylesheet'>
 
     <link href="css/charisma-app.css" rel="stylesheet">
     <link href='bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
@@ -221,7 +222,7 @@ if($_SESSION['enroll'] == 'admin')
             </div>
             <div class="box-content row">
                 <div class="col-md-11">
-                       <table class="table table-hover" id="tableBeli">
+                       <table class="table table-hover" id="tableJual">
                        		<thead>
 								<th>Nama Penjual</th>
 								<th>id Penjual</th>
@@ -304,19 +305,16 @@ if($_SESSION['enroll'] == 'admin')
 
 </div><!--/.fluid-container--> 
 
-
-
-
-
-
-
-
-
-
-
 <!-- external javascript -->
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    	$('#tableJual').DataTable({
+	    } );
+} );
+</script>
 
 <!-- library for cookie management -->
 <script src="js/jquery.cookie.js"></script>

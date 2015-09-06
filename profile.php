@@ -618,11 +618,6 @@ if($_SESSION['enroll'] == 'customer')
     </div><!--/#content.col-md-0-->
 </div><!--/fluid-row-->
 
-
-    
-
-    <hr>
-
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
 

@@ -65,6 +65,7 @@ if($_SESSION['enroll'] == 'admin')
 
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
+	<link href='css/jquery.dataTables.min.css' rel='stylesheet'>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -267,17 +268,16 @@ if($_SESSION['enroll'] == 'admin')
 
 
 
-
-
-
-
-
-
-
-
 <!-- external javascript -->
-
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    	$('#tableBeli').DataTable({
+	    } );
+} );
+</script>
+
 
 <!-- library for cookie management -->
 <script src="js/jquery.cookie.js"></script>

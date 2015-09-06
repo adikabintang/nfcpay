@@ -150,7 +150,7 @@ if($_SESSION['enroll'] == 'customer')
             <div>
     <ul class="breadcrumb">
         <li>
-            <<a href="homepage.php">Home</a>
+            <a href="homepage.php">Home</a>
         </li>
         <li>
             <a href="profile.php">Dashboard</a>
